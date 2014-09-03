@@ -10,6 +10,7 @@ This tutorial is streamlined for Pivots who are familiar with Rails but are unfa
 
 There are a few assumptions in this tutorial. It's up to the reader to work around them to suit the project:
 
+- You're starting a new Rails project
 - You want to use a postgres database
 - You want to use a database at all
 
@@ -26,7 +27,7 @@ If you installed `cf` with Homebrew, chastise thyself and [download it through t
 
 For a guide to setting these things up, see [Getting Started with Pivotal Web Services][pws-getting-started].
 
-## Setting up the app locally
+## Setting up locally
 
 Clone this repo. It's really just the result of `rails new app_name --database=postgresql`. You could do that instead if you liked.
 
@@ -41,7 +42,7 @@ cd pivot_pws_tutorial_rails
 bin/rails server
 ```
 
-Looks like you need a database. Do as Rails says to get a local one. Refresh the page. You should now see the vanilla Rails "Welcome aboard" message.
+It looks like you need a database. Do as Rails says to get a local one. Refresh the page. You should now see the vanilla Rails "Welcome aboard" message.
 
 ## Pushing the app
 
@@ -51,7 +52,7 @@ First, let's log in to PWS from the CLI.
 cf login -a api.run.pivotal.io
 ```
 
-Fill in your credentials and choose the org you wish to deploy your app into. Unless you have more than one space, you'll probably be placed into the 'development' space. This is fine for the tutorial.
+Fill in your credentials and choose the org through which you wish to deploy your app. Unless you have more than one space, you'll probably be placed into the 'development' space. This is fine for the tutorial.
 
 Let's see what apps are in the space.
 
@@ -125,9 +126,33 @@ PG::ConnectionBad (could not connect to server: No such file or directory
 ):
 ```
 
-Indeed, we haven't set up a database on PWS.
+Indeed, we haven't yet set up a database for PWS.
 
 ## Adding a database
+
+Follow the instructions in the public Getting Started guide to install a service. The example is for a postgres database, which is what we want.
+
+This is a good time to start using a manifest.yml. Follow the extra step in the public tutorial to configure this.
+
+After this is done, your manifest.yml should look like this (note the modern-day use of bin/rake and bin/rails):
+
+```sh
+---
+applications:
+  - name: your-unique-app-name
+    memory: 256M
+    instances: 1
+    path: .
+    command: bin/rake db:migrate && bin/rails server -p $PORT
+    services:
+      - rails-postgres
+```
+
+Now push these changes. There's no need to include the app name now we've configured it in the manifest.
+
+```sh
+cf push
+```
 
 ## Sponsorship
 
