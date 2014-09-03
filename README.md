@@ -8,26 +8,43 @@ There is a public-facing Getting Started with Rails on PWS guide (not available 
 
 This tutorial is streamlined for Pivots who are familiar with Rails but not with [PWS][pws]. It includes extra information such as [how to request sponsorship for your organization][sponsorship].
 
+There are a few assumptions in this tutorial. It's up to the Pivot to work around them to suit the project:
+
+- You want to use a postgres database
+- You want to use a database at all
+
 ## Prerequisites
 
-You should have the Cloud Foundry client CLI `cf` available in your PATH and up-to-date. If you don't, see the public tutorial first. If you installed it with rubygems, chastise thyself and uninstall it again: the CLI is now written in Go.
+You should have the Cloud Foundry client CLI `cf` available in your PATH and up-to-date. If you don't, see [Getting Started with Pivotal Web Services][pws-getting-started]. If you installed it with rubygems, chastise thyself and uninstall it again: the CLI is now written in Go.
 
-## 5 minute cheesy start
+## Setting up the app locally
 
 Clone this repo.
 
-`git clone https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails`
+```sh
+git clone https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails
+```
 
 Start the app locally.
 
-`cd pivot_pws_tutorial_rails`
-`rails server`
+```sh
+cd pivot_pws_tutorial_rails
+rails server
+```
+
+Looks like you need a database. Do as Rails says to get a local one. Refresh the page. You should now see the vanilla Rails "Welcome aboard" message.
+
+## Deploy
+
+```sh
+cf 
 
 ## Sponsorship
 
 Any Labs project is eligible for its PWS costs to be covered by a sponsorship during its engagement. Once the project is handed off, the sponsorship will end and the client will be responsible for paying each PWS bill.
 
 [pws]:https://run.pivotal.io/
+[pws-getting-started]:http://docs.run.pivotal.io/starting/
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
 [sponsorship]:#sponsorship
