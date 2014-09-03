@@ -75,22 +75,57 @@ If all went well, you should see lots of output and then a summary of the pushed
 requested state: started
 instances: 1/1
 usage: 1G x 1 instances
-urls: pivot-pws-tutorial-rails.cfapps.io
+urls: your-unique-app-name.cfapps.io
 
      state     since                    cpu    memory        disk
 #0   running   2014-09-03 12:06:33 PM   0.0%   93.3M of 1G   89.2M of 1G
 ```
 
+The app is running on PWS. Congrats!
+
 ### Something failed
 
 If you get a message like this:
 
-```
+`
 Server error, status code: 400, error code: 100005, message: You have exceeded your organization's memory limit.
-```
+`
 
 …then you probably ran out of trial and need your org to be [sponsored][sponsorship].
 
+## Visiting the site after the first push
+
+Visiting your shiny new site will result in the familiar Rails 500 page. Let's dig into what might be going wrong.
+
+Start tailing the app's logs.
+
+```sh
+cf logs $YOUR_UNIQUE_APP_NAME
+```
+
+Then refresh your browser. You'll see some output in the shell.
+
+`2014-09-03T12:16:21.86+0100 [RTR]     OUT pivot-pws-tutorial-rails.cfapps.io - [03/09/2014:11:16:21 +0000] "GET / HTTP/1.1" 500 1477 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2" 10.10.2.122:18974 x_forwarded_for:"87.115.116.242" vcap_request_id:96f637b7-36f3-4f52-6f1f-1ed19e033656 response_time:0.008857278 app_id:cf33229e-b7b9-4636-a17d-0f3bbb70e0bd`
+
+
+This does confirm that we're getting a 500, but since Rails is running in production mode, it's not dumping backtraces to STDOUT or STDERR. We'll need to pull the production.log.
+
+```sh
+cf files $YOUR_UNIQUE_APP_NAME app/log/production.log
+```
+
+Inside the backtrace should be something along these lines:
+
+```sh
+PG::ConnectionBad (could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/var/run/postgresql/.s.PGSQL.5432"?
+):
+```
+
+Indeed, we haven't set up a database on PWS.
+
+## Adding a database
 
 ## Sponsorship
 
