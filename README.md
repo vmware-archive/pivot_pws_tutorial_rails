@@ -43,7 +43,9 @@ bin/rails server
 
 Looks like you need a database. Do as Rails says to get a local one. Refresh the page. You should now see the vanilla Rails "Welcome aboard" message.
 
-## Log in with the CLI
+## Pushing the app
+
+First, let's log in to PWS from the CLI.
 
 ```sh
 cf login -a api.run.pivotal.io
