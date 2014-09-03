@@ -58,13 +58,13 @@ Let's see what apps are in the space.
 cf apps
 ```
 
-You may well get 'No apps found'. Let's change that.
+You may well get 'No apps found'. Let's change that by trying to push our app.
 
 ```sh
 cf push
 ```
 
-Oh no! Looks like App name is a required field. You could stick this in a manifest.yml, but let's just provide it on the command line for now.
+Oh no! It looks like 'App name is a required field'. You could stick the app name in a manifest.yml, but let's just provide it on the command line for now.
 
 ```sh
 cf push $YOUR_UNIQUE_APP_NAME
