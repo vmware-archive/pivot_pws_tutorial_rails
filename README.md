@@ -4,7 +4,7 @@ This is a tutorial for Pivots who are familiar with Rails but not with [PWS][pws
 
 There is a public-facing Getting Started with Rails on PWS guide (not available at time of writing) that details much of the process required to get started with PWS, including command line usage and project setup.
 
-However, the tutorial you're reading is streamlined for Pivots, and includes extra information such as how to request a sponsored organization.
+However, the tutorial you're reading is streamlined for Pivots, and includes extra information such as [how to request sponsorship for your organization][sponsorship].
 
 
 ## Sponsorship
@@ -14,3 +14,4 @@ Any Labs project is eligible for its PWS costs to be covered by a sponsorship du
 [pws]:https://run.pivotal.io/
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
+[sponsorship]:#sponsorship
