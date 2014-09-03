@@ -21,9 +21,9 @@ You should have:
 - The Cloud Foundry client CLI `cf` available in your PATH and up-to-date.
 - A PWS account
 
-If you installed `cf` with rubygems, chastise thyself and uninstall it again: the CLI is now written in Go.
+If you installed `cf` with rubygems, uninstall it again: the CLI is now written in Go.
 
-If you installed `cf` with Homebrew, chastise thyself and [download it through the Developer Console][tools].
+If you installed `cf` with Homebrew, uninstall it again and [download it through the Developer Console][tools].
 
 For a guide to setting these things up, see [Getting Started with Pivotal Web Services][pws-getting-started].
 
@@ -134,7 +134,7 @@ Follow the instructions in the public Getting Started guide to install a service
 
 This is a good time to start using a manifest.yml. Follow the extra step in the public tutorial to configure this.
 
-After this is done, your manifest.yml should look like this (note the modern-day use of bin/rake and bin/rails):
+After this is done, your manifest.yml should look like this (this version is adapted to use bin/rake and bin/rails):
 
 ```sh
 ---
@@ -148,11 +148,53 @@ applications:
       - rails-postgres
 ```
 
-Now push these changes. There's no need to include the app name now we've configured it in the manifest.
+Now push these changes. There's no need to include the app name since we've configured it in the manifest.
 
 ```sh
 cf push
 ```
+
+Refresh your browser. You should now get the Rails 404 page, along the lines of 'The page you were looking for doesn't exist.'
+
+A quick check of the production.log reveals we're missing a route for /. Let's put a page at / that will verify our database works, since a missing route doesn't tell us much about our database connectivity.
+
+```sh
+bin/rails generate resource Pant
+echo 'Pants: <%= Pant.count %>' > app/views/pants/index.html.erb
+```
+
+Now edit config/routes.rb and change `resources :pants` to read:
+
+```ruby
+root "pants#index"
+```
+
+Check <http://localhost:3000/> to see that the count appears, then push the app:
+
+```sh
+cf push
+```
+
+Once the push is complete, visit your *.cfapps.io URL and confirm that the same appears there as it did locally. It should say 'Pants: 0'.
+
+Let's add a pair of pants to confirm that we're talking to the correct database.
+
+Retrieve the database URL first.
+
+```sh
+cf env $YOUR_UNIQUE_APP_NAME
+```
+
+You can see from the output that there's a System-Provided environment variable called VCAP_SERVICES. An archaic name (VMware Certified Advanced Professional Services?), this variable contains data about service instances.
+
+If you copy the URI under VCAP_SERVICES.elephantsql[0].credentials.uri into psql you'll be connected to your DB.
+
+```sh
+psql postgres://long:andcomplicated@url.elephantsql.com:5432/long
+insert into pants (created_at) values (now());
+```
+
+Refresh the PWS-hosted URL in your browser and you should see 'Pants: 1'.
 
 ## Sponsorship
 
