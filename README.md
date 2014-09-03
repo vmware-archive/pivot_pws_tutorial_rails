@@ -1,12 +1,12 @@
 # Getting started with [Pivotal Web Services][pws] (PWS) on Rails
 
-PWS is an installation of [Cloud Foundry][cf] that we host, similar to [Heroku][heroku]. You might use this tutorial if, for example, you know your Labs project wants to host on PWS but you're not sure where to start.
+PWS is an installation of [Cloud Foundry][cf] that we host, similar to [Heroku][heroku]. Follow this tutorial if, for example, you know your Labs project wants to host on PWS but you're not sure where to start.
 
 ## This is internal
 
 There is a public-facing Getting Started with Rails on PWS guide (not available at time of writing) that details much of the process required to get started with PWS, including command line usage and project setup.
 
-This tutorial is streamlined for Pivots who are familiar with Rails but not with [PWS][pws]. It includes extra information such as [how to request sponsorship for your organization][sponsorship].
+This tutorial is streamlined for Pivots who are familiar with Rails but are unfamiliar with [PWS][pws]. It includes extra information such as [how to request sponsorship for your organization][sponsorship].
 
 There are a few assumptions in this tutorial. It's up to the reader to work around them to suit the project:
 
