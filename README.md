@@ -8,14 +8,23 @@ There is a public-facing Getting Started with Rails on PWS guide (not available 
 
 This tutorial is streamlined for Pivots who are familiar with Rails but not with [PWS][pws]. It includes extra information such as [how to request sponsorship for your organization][sponsorship].
 
-There are a few assumptions in this tutorial. It's up to the Pivot to work around them to suit the project:
+There are a few assumptions in this tutorial. It's up to the reader to work around them to suit the project:
 
 - You want to use a postgres database
 - You want to use a database at all
 
 ## Prerequisites
 
-You should have the Cloud Foundry client CLI `cf` available in your PATH and up-to-date. If you don't, see [Getting Started with Pivotal Web Services][pws-getting-started]. If you installed it with rubygems, chastise thyself and uninstall it again: the CLI is now written in Go.
+You should have:
+
+- The Cloud Foundry client CLI `cf` available in your PATH and up-to-date.
+- A PWS account
+
+If you installed `cf` with rubygems, chastise thyself and uninstall it again: the CLI is now written in Go.
+
+If you installed `cf` with Homebrew, chastise thyself and [download it through the Developer Console][tools].
+
+For a guide to setting these things up, see [Getting Started with Pivotal Web Services][pws-getting-started].
 
 ## Setting up the app locally
 
@@ -38,6 +47,7 @@ Looks like you need a database. Do as Rails says to get a local one. Refresh the
 
 ```sh
 cf 
+```
 
 ## Sponsorship
 
@@ -45,6 +55,7 @@ Any Labs project is eligible for its PWS costs to be covered by a sponsorship du
 
 [pws]:https://run.pivotal.io/
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
+[tools]:https://console.run.pivotal.io/tools
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
 [sponsorship]:#sponsorship
