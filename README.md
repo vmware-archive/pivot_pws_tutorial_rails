@@ -51,7 +51,7 @@ cf login -a api.run.pivotal.io
 
 Fill in your credentials and choose the org you wish to deploy your app into. Unless you have more than one space, you'll probably be placed into the 'development' space. This is fine for the tutorial.
 
-Let's see what apps are in the org.
+Let's see what apps are in the space.
 
 ```sh
 cf apps
@@ -63,10 +63,34 @@ You may well get 'No apps found'. Let's change that.
 cf push
 ```
 
-Oh no! Looks like App name is a required field. You can stick this in a manifest.yml, but let's just provide it on the command line for now.
+Oh no! Looks like App name is a required field. You could stick this in a manifest.yml, but let's just provide it on the command line for now.
 
 ```sh
-cf push 
+cf push $YOUR_UNIQUE_APP_NAME
+```
+
+If all went well, you should see lots of output and then a summary of the pushed app's status.
+
+```
+requested state: started
+instances: 1/1
+usage: 1G x 1 instances
+urls: pivot-pws-tutorial-rails.cfapps.io
+
+     state     since                    cpu    memory        disk
+#0   running   2014-09-03 12:06:33 PM   0.0%   93.3M of 1G   89.2M of 1G
+```
+
+### Something failed
+
+If you get a message like this:
+
+```
+Server error, status code: 400, error code: 100005, message: You have exceeded your organization's memory limit.
+```
+
+…then you probably ran out of trial and need your org to be [sponsored][sponsorship].
+
 
 ## Sponsorship
 
