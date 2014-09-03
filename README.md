@@ -21,9 +21,7 @@ You should have:
 - The Cloud Foundry client CLI `cf` available in your PATH and up-to-date.
 - A PWS account
 
-If you installed `cf` with rubygems, uninstall it again: the CLI is now written in Go.
-
-If you installed `cf` with Homebrew, uninstall it again and [download it through the Developer Console][tools].
+If you installed `cf` with rubygems or Homebrew, uninstall it again and [download it through the Developer Console][tools].
 
 For a guide to setting these things up, see [Getting Started with Pivotal Web Services][pws-getting-started].
 
