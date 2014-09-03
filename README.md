@@ -85,7 +85,7 @@ urls: your-unique-app-name.cfapps.io
 
 The app is running on PWS. Congrats!
 
-### Something failed
+### If the push failed
 
 If you get a message like this:
 
