@@ -154,7 +154,7 @@ cf push
 
 Refresh your browser. You should now get the Rails 404 page, along the lines of 'The page you were looking for doesn't exist.'
 
-A quick check of the production.log reveals we're missing a route for /. Let's put a page at / that will verify our database works, since a missing route doesn't tell us much about our database connectivity.
+A quick check of the production.log reveals we're missing a route for '/'. Let's put a page at '/' that will verify our database works, since a missing route doesn't tell us much about our database connectivity.
 
 ```sh
 bin/rails generate resource Pant
@@ -188,15 +188,21 @@ You can see from the output that there's a System-Provided environment variable 
 If you copy the URI under VCAP_SERVICES.elephantsql[0].credentials.uri into psql you'll be connected to your DB.
 
 ```sh
-psql postgres://long:andcomplicated@url.elephantsql.com:5432/long
+psql $THE_URL_YOU_COPIED
 insert into pants (created_at) values (now());
 ```
 
 Refresh the PWS-hosted URL in your browser and you should see 'Pants: 1'.
 
+## Database migrations
+
 ## Sponsorship
 
 Any Labs project is eligible for its PWS costs to be covered by a sponsorship during its engagement. Once the project is handed off, the sponsorship will end and the client will be responsible for paying each PWS bill.
+
+## Troubleshooting
+
+## How to file a support ticket
 
 [pws]:https://run.pivotal.io/
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
