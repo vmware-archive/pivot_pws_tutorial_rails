@@ -162,6 +162,8 @@ cf push $YOUR_UNIQUE_APP_NAME
 
 Refreshing the browser whilst tailing the logs should now show the PG::ConnectionBad error. No need to dig around with `cf files`.
 
+[The result of this change is in the step3 branch.][step3]
+
 ## Adding a database
 
 Follow the instructions in the public *Getting Started* guide to install a service. The example there is for a postgres database, which is what we want.
@@ -216,8 +218,6 @@ cf push
 ```
 
 Once the push is complete, visit your .cfapps.io URI and confirm that the same appears there as it did locally. It should say 'Pants: 0'.
-
-[The result of this change is tagged as step3.][step3]
 
 ## Connecting to the remote database with psql
 
