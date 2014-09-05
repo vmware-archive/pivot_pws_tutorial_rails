@@ -229,7 +229,7 @@ production:
 
 The above values are bogus, so how is PWS connecting to the database?
 
-The Cloud Foundry Ruby buildpack will automatically extract the URI in VCAP_SERVICES and set it to DATABASE_URL if the latter isn't set (see `cf set-env`).
+The Cloud Foundry Ruby buildpack will automatically extract the URI in VCAP_SERVICES and set it to DATABASE_URL if the latter isn't set (with `cf set-env`).
 
 [Rails 4 will notice that a DATABASE_URL is set][rails-config-db] and use that instead of config/database.yml. The result is an ignored config file. You could safely delete the production stanza.
 
