@@ -1,0 +1,9 @@
+---
+applications:
+  - name: yaapp
+    memory: 256M
+    instances: 1
+    path: .
+    command: bin/rake db:migrate && bin/rails server -p $PORT
+    services:
+      - yaaservice
