@@ -41,7 +41,7 @@ cd pivot_pws_tutorial_rails
 bin/rails server
 ```
 
-It looks like you need a database. Do as Rails says to get a local one. Refresh the page. You should now see the vanilla Rails "Welcome aboard" message.
+<http://localhost:3000> will let you know that you need a database. Do as Rails says to get a local one. Refresh the page. You should now see the vanilla Rails "Welcome aboard" message.
 
 ## Pushing the app
 
@@ -84,6 +84,10 @@ urls: your-unique-app-name.cfapps.io
 ```
 
 The app is running on PWS. Congrats!
+
+### If the app doesn't tell you about a missing database locally
+
+You need to have postgresql running. Follow the instructions in `brew info postgresql`.
 
 ### If the push failed
 
