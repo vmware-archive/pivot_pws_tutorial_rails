@@ -46,7 +46,6 @@ You could do that instead if you prefer.
 Start the app locally.
 
 ```sh
-cd pivot_pws_tutorial_rails
 bin/rails server
 ```
 
