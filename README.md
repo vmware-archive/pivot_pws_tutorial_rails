@@ -215,7 +215,7 @@ insert into pants (created_at) values (now());
 
 Refresh the page at the PWS-hosted URI in your browser and you should see 'Pants: 1'.
 
-### How did it connect to the database?
+### So how did the app connect to the database?
 
 You may have noticed that the checked-in config/database.yml is using the default Rails configuration. That is, the production stanza looks like this:
 
