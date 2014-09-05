@@ -119,8 +119,8 @@ cf logs $YOUR_UNIQUE_APP_NAME
 
 Then refresh your browser. You'll see some output in the shell.
 
-<pre>2014-09-03T12:16:21.86+0100 [RTR]     OUT pivot-pws-tutorial-rails.cfapps.io - [03/09/2014:11:16:21 +0000] "GET / HTTP/1.1" 500 1477 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2" 10.10.2.122:18974 x_forwarded_for:"87.115.116.242" vcap_request_id:96f637b7-36f3-4f52-6f1f-1ed19e033656 response_time:0.008857278 app_id:cf33229e-b7b9-4636-a17d-0f3bbb70e0bd
-</pre>
+`2014-09-03T12:16:21.86+0100 [RTR]     OUT pivot-pws-tutorial-rails.cfapps.io - [03/09/2014:11:16:21 +0000] "GET / HTTP/1.1" 500 1477 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2" 10.10.2.122:18974 x_forwarded_for:"87.115.116.242" vcap_request_id:96f637b7-36f3-4f52-6f1f-1ed19e033656 response_time:0.008857278 app_id:cf33229e-b7b9-4636-a17d-0f3bbb70e0bd`
+
 
 This does confirm that we're getting a 500, but we haven't yet configured Rails to output logs to STDOUT.
 
