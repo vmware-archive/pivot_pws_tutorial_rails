@@ -28,17 +28,19 @@ For a guide to setting these things up, see [Getting Started with Pivotal Web Se
 
 ## Setting up locally
 
-Clone this repo. It's really just the result of:
+Clone this repo.
+
+```sh
+git clone https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails
+```
+
+It's really just the result of:
 
 ```sh
 rails new app_name --database=postgresql --skip-javascript --skip-test-unit
 ```
 
 You could do that instead if you prefer.
-
-```sh
-git clone https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails
-```
 
 Start the app locally.
 
