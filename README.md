@@ -145,13 +145,13 @@ Indeed, we haven't yet set up a database for PWS. But that was a cumbersome way 
 
 We have a problem in our configuration: our logs don't go to STDOUT. Setting up logs to go to STDOUT is [one of the 12 factors][12factordotnet-logs] that make an app suitable for deployment on a modern cloud platform like Cloud Foundry.
 
-As it turns out, the Ruby Buildpack gave us a WARNING that we hadn't installed the 12 factor gem when we pushed. Let's do that now. Add this line to your Gemfile:
+When we pushed, the Ruby Buildpack gave us a WARNING that we hadn't installed the 12 factor gem. Let's do that now. Add this line to your Gemfile:
 
 ```ruby
 gem 'rails_12factor', group: :production
 ```
 
-Then re-bundle and push:
+Then bundle and push:
 
 ```
 bundle
@@ -162,7 +162,7 @@ Tailing the logs and refreshing the browser shows us the full error now, as we s
 
 ## Adding a database
 
-Follow the instructions in the public *Getting Started* guide to install a service. The example is for a postgres database, which is what we want.
+Follow the instructions in the public *Getting Started* guide to install a service. The example there is for a postgres database, which is what we want.
 
 This is a good time to start using a manifest.yml. Follow the extra step in the public tutorial to configure this.
 
@@ -256,9 +256,9 @@ The Cloud Foundry Ruby buildpack will automatically extract the URI in VCAP_SERV
 
 ## Database migrations
 
-At the time of writing, PWS doesn't support one-off tasks like Heroku's `heroku run`. However, for database migrations the usual technique is to run them during the application's startup. This is what is done in the above manifest.yml.
+At the time of writing, PWS doesn't support one-off tasks like Heroku's `heroku run`. However, for database migrations a temporary workaround is to run them during the application's startup. This is what is done in the above manifest.yml.
 
-However, since an app of any size will likely have more than one instance, the trick is to only run the migrations on one instance. The public *Getting Started* guide has an example of setting up a rake task called 'cf:on_first_instance'. The manifest ends up looking like this:
+However, since an app of any size will likely have more than one instance, the trick is to only run the migrations on one instance. The public *Getting Started* guide has an example of setting up a rake task called 'cf:on_first_instance'. We can change our manifest to run that task before our migration:
 
 ```yaml
 ---
@@ -276,9 +276,13 @@ applications:
 
 Any Labs project is eligible for its PWS costs to be covered by a sponsorship during its engagement. Once the project is handed off, the sponsorship will end and the client will be responsible for paying each PWS bill.
 
+To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponsorship>. This allows the PWS PM to keep track of internal sponsorships.
+
 ## Troubleshooting
 
 ## How to file a support ticket
+
+<http://support.run.pivotal.io/home> is a good place to start for PWS support. However, if you're in the San Francisco office, you might want to pay the PWS team a visit on the fourth floor.
 
 [pws]:https://run.pivotal.io/
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
