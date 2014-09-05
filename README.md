@@ -196,7 +196,7 @@ Retrieve the database URL first.
 cf env $YOUR_UNIQUE_APP_NAME
 ```
 
-You can see from the output that there's a System-Provided environment variable called VCAP_SERVICES. An archaic name (VMware Certified Advanced Professional Services?), this variable contains data about service instances.
+You can see from the output that there's a System-Provided environment variable called VCAP_SERVICES. An archaic name (VMware Certified Advanced Professional Services), this variable contains data about service instances.
 
 If you copy the URI under VCAP_SERVICES.elephantsql[0].credentials.uri into psql you'll be connected to your DB.
 
