@@ -186,6 +186,8 @@ cf push
 
 Once the push is complete, visit your *.cfapps.io URL and confirm that the same appears there as it did locally. It should say 'Pants: 0'.
 
+## Connecting to the remote database with psql
+
 Let's add a pair of pants to confirm that we're talking to the correct database.
 
 Retrieve the database URL first.
