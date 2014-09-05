@@ -139,11 +139,11 @@ PG::ConnectionBad (could not connect to server: No such file or directory
 ):
 ```
 
-Indeed, we haven't yet set up a database for PWS.
+Indeed, we haven't yet set up a database for PWS. But that was a cumbersome way to retrieve a backtrace.
 
 ### Installing the 12 factor gem
 
-We're avoiding a problem in our configuration: our logs don't go to STDOUT. Setting up logs to go to STDOUT is [one of the 12 factors][12factordotnet-logs] that make an app suitable for deployment on a modern cloud platform like Cloud Foundry.
+We have a problem in our configuration: our logs don't go to STDOUT. Setting up logs to go to STDOUT is [one of the 12 factors][12factordotnet-logs] that make an app suitable for deployment on a modern cloud platform like Cloud Foundry.
 
 As it turns out, the Ruby Buildpack gave us a WARNING that we hadn't installed the 12 factor gem when we pushed. Let's do that now. Add this line to your Gemfile:
 
@@ -157,6 +157,8 @@ Then re-bundle and push:
 bundle
 cf push $YOUR_UNIQUE_APP_NAME
 ```
+
+Tailing the logs and refreshing the browser shows us the full error now, as we saw from the `cf files` invokation.
 
 ## Adding a database
 
