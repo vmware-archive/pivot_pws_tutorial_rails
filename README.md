@@ -141,7 +141,7 @@ PG::ConnectionBad (could not connect to server: No such file or directory
 
 Indeed, we haven't yet set up a database for PWS. But that was a cumbersome way to retrieve a backtrace.
 
-### Installing the 12 factor gem
+## Installing the 12 factor gem
 
 We have a problem in our configuration: our logs don't go to STDOUT. Setting up logs to go to STDOUT is [one of the 12 factors][12factordotnet-logs] that make an app suitable for deployment on a modern cloud platform like Cloud Foundry.
 
