@@ -158,7 +158,7 @@ bundle
 cf push $YOUR_UNIQUE_APP_NAME
 ```
 
-Tailing the logs and refreshing the browser shows us the full error now, as we saw from the `cf files` invokation.
+Tailing the logs and refreshing the browser shows us the full error now, as we saw from the `cf files` invocation.
 
 ## Adding a database
 
