@@ -133,7 +133,7 @@ Indeed, we haven't yet set up a database for PWS.
 
 ## Adding a database
 
-Follow the instructions in the public Getting Started guide to install a service. The example is for a postgres database, which is what we want.
+Follow the instructions in the public *Getting Started* guide to install a service. The example is for a postgres database, which is what we want.
 
 This is a good time to start using a manifest.yml. Follow the extra step in the public tutorial to configure this.
 
@@ -200,6 +200,10 @@ insert into pants (created_at) values (now());
 Refresh the PWS-hosted URL in your browser and you should see 'Pants: 1'.
 
 ## Database migrations
+
+At the time of writing, PWS doesn't support one-off tasks like Heroku's `heroku run`. However, for database migrations the usual technique is to run them during the application's startup.
+
+However, since an app of any size will likely have more than one instance, the trick is to only run the migrations on one instance. The public *Getting Started* guide has an example of doing this.
 
 ## Sponsorship
 
