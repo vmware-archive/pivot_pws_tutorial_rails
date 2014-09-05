@@ -215,7 +215,7 @@ insert into pants (created_at) values (now());
 
 Refresh the page at the PWS-hosted URI in your browser and you should see 'Pants: 1'.
 
-### How did it get this URI?
+### How did it connect to the database?
 
 You may have noticed that the checked-in config/database.yml is using the default Rails configuration. That is, the production stanza looks like this:
 
@@ -227,9 +227,11 @@ production:
   password: <%= ENV['PIVOT_PWS_TUTORIAL_RAILS_DATABASE_PASSWORD'] %>
 ```
 
-If that's the case, how is PWS connecting to the database, since the above values are bogus?
+The above values are bogus, so how is PWS connecting to the database?
 
-Similarly to Heroku, PWS injects a database.yml at runtime.
+The Cloud Foundry Ruby buildpack will automatically extract the URI in VCAP_SERVICES and set it to DATABASE_URL if the latter isn't set (see `cf set-env`).
+
+[Rails 4 will notice that a DATABASE_URL is set][rails-config-db] and use that instead of config/database.yml. The result is an ignored config file. You could safely delete the production stanza.
 
 ## Database migrations
 
@@ -249,7 +251,9 @@ Any Labs project is eligible for its PWS costs to be covered by a sponsorship du
 
 [pws]:https://run.pivotal.io/
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
+[configure-service-ruby]:http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html
 [tools]:https://console.run.pivotal.io/tools
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
 [sponsorship]:#sponsorship
+[rails-config-db]:http://guides.rubyonrails.org/configuring.html#configuring-a-database
