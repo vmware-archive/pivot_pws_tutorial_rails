@@ -27,7 +27,7 @@ For a guide to setting these things up, see [Getting Started with Pivotal Web Se
 
 ## Setting up locally
 
-Clone this repo and checkout step 1.
+Clone this repo and checkout step1.
 
 ```sh
 git clone git@github.com:pivotal-cf-experimental/pivot_pws_tutorial_rails.git
@@ -217,6 +217,8 @@ cf push
 
 Once the push is complete, visit your .cfapps.io URI and confirm that the same appears there as it did locally. It should say 'Pants: 0'.
 
+[The result of this change is tagged as step3.][step3]
+
 ## Connecting to the remote database with psql
 
 Let's add a pair of pants to confirm that we're talking to the correct database.
@@ -293,6 +295,7 @@ To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponso
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
 [step2]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step1...step2
+[step3]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step2...step3
 [sponsorship]:#sponsorship
 [12factor]:#12-factor
 [12factordotnet-logs]:http://12factor.net/logs
