@@ -122,7 +122,7 @@ Then refresh your browser. You'll see some output in the shell.
 `2014-09-03T12:16:21.86+0100 [RTR]     OUT pivot-pws-tutorial-rails.cfapps.io - [03/09/2014:11:16:21 +0000] "GET / HTTP/1.1" 500 1477 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2" 10.10.2.122:18974 x_forwarded_for:"87.115.116.242" vcap_request_id:96f637b7-36f3-4f52-6f1f-1ed19e033656 response_time:0.008857278 app_id:cf33229e-b7b9-4636-a17d-0f3bbb70e0bd`
 
 
-This does confirm that we're getting a 500, but since Rails is running in production mode, it's not dumping backtraces to STDOUT or STDERR. We'll need to pull the production.log.
+This does confirm that we're getting a 500, but since Rails is running in production mode, and we haven't yet [configured it][12factor] fully, it's not dumping backtraces to STDOUT or STDERR. We'll need to pull the production.log.
 
 ```sh
 cf files $YOUR_UNIQUE_APP_NAME app/log/production.log
@@ -235,11 +235,37 @@ The Cloud Foundry Ruby buildpack will automatically extract the URI in VCAP_SERV
 
 ## Database migrations
 
-At the time of writing, PWS doesn't support one-off tasks like Heroku's `heroku run`. However, for database migrations the usual technique is to run them during the application's startup.
+At the time of writing, PWS doesn't support one-off tasks like Heroku's `heroku run`. However, for database migrations the usual technique is to run them during the application's startup. This is what is done in the above manifest.yml.
 
-However, since an app of any size will likely have more than one instance, the trick is to only run the migrations on one instance. The public *Getting Started* guide has an example of doing this.
+However, since an app of any size will likely have more than one instance, the trick is to only run the migrations on one instance. The public *Getting Started* guide has an example of setting up a rake task called 'cf:on_first_instance'. The manifest ends up looking like this:
+
+```yaml
+---
+applications:
+  - name: your-unique-app-name
+    memory: 256M
+    instances: 1
+    path: .
+    command: bin/rake cf:on_first_instance db:migrate && bin/rails server -p $PORT
+    services:
+      - rails-postgres
+```
 
 ## Push warnings: tidying up
+
+Each time you pushed you may have noticed a few ugly WARNINGs. Let's fix these.
+
+### 12 factor
+
+The first is this:
+
+```sh
+###### WARNING:
+       Include 'rails_12factor' gem to enable all platform features
+       See https://devcenter.heroku.com/articles/rails-integration-gems for more information.
+```
+
+Heroku's 12 factor app recommendation spawned a gem, which does several things.
 
 ## Sponsorship
 
@@ -256,4 +282,5 @@ Any Labs project is eligible for its PWS costs to be covered by a sponsorship du
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
 [sponsorship]:#sponsorship
+[12factor]:#12-factor
 [rails-config-db]:http://guides.rubyonrails.org/configuring.html#configuring-a-database
