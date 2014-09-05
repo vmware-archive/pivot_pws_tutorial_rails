@@ -259,11 +259,13 @@ Each time you pushed you may have noticed a few ugly WARNINGs. Let's fix these.
 
 The first is this:
 
-`
+<pre>
+
 ###### WARNING:
        Include 'rails_12factor' gem to enable all platform features
        See https://devcenter.heroku.com/articles/rails-integration-gems for more information.
-`
+
+</pre>
 
 Heroku's 12 factor app recommendation spawned a gem, which does several things.
 
