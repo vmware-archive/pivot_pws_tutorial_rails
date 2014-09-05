@@ -101,7 +101,7 @@ Server error, status code: 400, error code: 100005, message: You have exceeded y
 
 ## Visiting the site after the first push
 
-Visiting your shiny new site will result in the familiar Rails 500 page. Let's dig into what might be going wrong.
+Visiting your shiny new site at http://your-unique-app-name.cfapps.io/ will result in the familiar Rails 500 page. Let's dig into what might be going wrong.
 
 Start tailing the app's logs.
 
