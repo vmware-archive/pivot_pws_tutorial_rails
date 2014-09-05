@@ -122,7 +122,9 @@ Then refresh your browser. You'll see some output in the shell.
 `2014-09-03T12:16:21.86+0100 [RTR]     OUT pivot-pws-tutorial-rails.cfapps.io - [03/09/2014:11:16:21 +0000] "GET / HTTP/1.1" 500 1477 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_4) AppleWebKit/537.78.2 (KHTML, like Gecko) Version/7.0.6 Safari/537.78.2" 10.10.2.122:18974 x_forwarded_for:"87.115.116.242" vcap_request_id:96f637b7-36f3-4f52-6f1f-1ed19e033656 response_time:0.008857278 app_id:cf33229e-b7b9-4636-a17d-0f3bbb70e0bd`
 
 
-This does confirm that we're getting a 500, but since Rails is running in production mode, and we haven't yet [configured it][12factor] fully, it's not dumping backtraces to STDOUT or STDERR. We'll need to pull the production.log.
+This does confirm that we're getting a 500, but we haven't yet configured Rails to output logs to STDOUT.
+
+We could get the production log at its current location like this:
 
 ```sh
 cf files $YOUR_UNIQUE_APP_NAME app/log/production.log
@@ -138,6 +140,23 @@ PG::ConnectionBad (could not connect to server: No such file or directory
 ```
 
 Indeed, we haven't yet set up a database for PWS.
+
+### Installing the 12 factor gem
+
+We're avoiding a problem in our configuration: our logs don't go to STDOUT. Setting up logs to go to STDOUT is [one of the 12 factors][12factordotnet-logs] that make an app suitable for deployment on a modern cloud platform like Cloud Foundry.
+
+As it turns out, the Ruby Buildpack gave us a WARNING that we hadn't installed the 12 factor gem when we pushed. Let's do that now. Add this line to your Gemfile:
+
+```ruby
+gem 'rails_12factor', group: :production
+```
+
+Then re-bundle and push:
+
+```
+bundle
+cf push $YOUR_UNIQUE_APP_NAME
+```
 
 ## Adding a database
 
@@ -264,8 +283,6 @@ The first is this:
        See https://devcenter.heroku.com/articles/rails-integration-gems for more information.
 </pre>
 
-Heroku's 12 factor app recommendation spawned a gem, which does several things.
-
 ## Sponsorship
 
 Any Labs project is eligible for its PWS costs to be covered by a sponsorship during its engagement. Once the project is handed off, the sponsorship will end and the client will be responsible for paying each PWS bill.
@@ -282,4 +299,5 @@ Any Labs project is eligible for its PWS costs to be covered by a sponsorship du
 [heroku]:https://www.heroku.com/
 [sponsorship]:#sponsorship
 [12factor]:#12-factor
+[12factordotnet-logs]:http://12factor.net/logs
 [rails-config-db]:http://guides.rubyonrails.org/configuring.html#configuring-a-database
