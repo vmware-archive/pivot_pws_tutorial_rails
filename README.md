@@ -49,7 +49,7 @@ cd pivot_pws_tutorial_rails
 bin/rails server
 ```
 
-<http://localhost:3000> will let you know that you need a database. Do as Rails says to get a local one. Refresh the page. You should now see the vanilla Rails "Welcome aboard" message.
+<http://localhost:3000/> will let you know that you need a database. Do as Rails says to get a local one. Refresh the page. You should now see the vanilla Rails "Welcome aboard" message.
 
 ### If the app doesn't tell you about a missing database locally
 
@@ -159,7 +159,7 @@ applications:
       - rails-postgres
 ```
 
-Now push these changes. There's no need to include the app name since we've configured it in the manifest.
+Now push these changes. There's no need to include the app name since we've just configured it in the manifest.
 
 ```sh
 cf push
@@ -180,13 +180,19 @@ Now edit config/routes.rb and change `resources :pants` to read:
 root "pants#index"
 ```
 
-Check <http://localhost:3000/> to see that the count appears, then push the app:
+Migrate:
+
+```sh
+bin/rake db:migrate
+```
+
+Now check <http://localhost:3000/> to see that the count appears, then push the app:
 
 ```sh
 cf push
 ```
 
-Once the push is complete, visit your *.cfapps.io URI and confirm that the same appears there as it did locally. It should say 'Pants: 0'.
+Once the push is complete, visit your .cfapps.io URI and confirm that the same appears there as it did locally. It should say 'Pants: 0'.
 
 ## Connecting to the remote database with psql
 
@@ -209,11 +215,29 @@ insert into pants (created_at) values (now());
 
 Refresh the page at the PWS-hosted URI in your browser and you should see 'Pants: 1'.
 
+### How did it get this URI?
+
+You may have noticed that the checked-in config/database.yml is using the default Rails configuration. That is, the production stanza looks like this:
+
+```yaml
+production:
+  <<: *default
+  database: pivot_pws_tutorial_rails_production
+  username: pivot_pws_tutorial_rails
+  password: <%= ENV['PIVOT_PWS_TUTORIAL_RAILS_DATABASE_PASSWORD'] %>
+```
+
+If that's the case, how is PWS connecting to the database, since the above values are bogus?
+
+Similarly to Heroku, PWS injects a database.yml at runtime.
+
 ## Database migrations
 
 At the time of writing, PWS doesn't support one-off tasks like Heroku's `heroku run`. However, for database migrations the usual technique is to run them during the application's startup.
 
 However, since an app of any size will likely have more than one instance, the trick is to only run the migrations on one instance. The public *Getting Started* guide has an example of doing this.
+
+## Push warnings: tidying up
 
 ## Sponsorship
 
