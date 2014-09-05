@@ -28,10 +28,11 @@ For a guide to setting these things up, see [Getting Started with Pivotal Web Se
 
 ## Setting up locally
 
-Clone this repo.
+Clone this repo and checkout step 1.
 
 ```sh
-git clone https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails
+git clone git@github.com:pivotal-cf-experimental/pivot_pws_tutorial_rails.git
+git checkout step1
 ```
 
 It's really just the result of:
