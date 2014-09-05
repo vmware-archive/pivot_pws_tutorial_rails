@@ -20,6 +20,7 @@ You should have:
 
 - The Cloud Foundry client CLI `cf` available in your PATH and up-to-date.
 - A PWS account
+- Postgresql installed locally: `brew install postgresql`
 
 If you installed `cf` with rubygems or Homebrew, uninstall it again and [download it through the Developer Console][tools].
 
