@@ -192,6 +192,10 @@ cf push
 
 Refresh your browser. You should now get the Rails 404 page, along the lines of 'The page you were looking for doesn't exist.'
 
+[The result of this change is in the step4 branch.][step4]
+
+## Verifying the database connection
+
 A quick check of the production.log reveals we're missing a route for '/'. Let's put a page at '/' that will verify our database works, since a missing route doesn't tell us much about our database connectivity.
 
 ```sh
