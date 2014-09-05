@@ -184,13 +184,13 @@ Check <http://localhost:3000/> to see that the count appears, then push the app:
 cf push
 ```
 
-Once the push is complete, visit your *.cfapps.io URL and confirm that the same appears there as it did locally. It should say 'Pants: 0'.
+Once the push is complete, visit your *.cfapps.io URI and confirm that the same appears there as it did locally. It should say 'Pants: 0'.
 
 ## Connecting to the remote database with psql
 
 Let's add a pair of pants to confirm that we're talking to the correct database.
 
-Retrieve the database URL first.
+Retrieve the database URI first.
 
 ```sh
 cf env $YOUR_UNIQUE_APP_NAME
@@ -201,11 +201,11 @@ You can see from the output that there's a System-Provided environment variable 
 If you copy the URI under VCAP_SERVICES.elephantsql[0].credentials.uri into psql you'll be connected to your DB.
 
 ```sh
-psql $THE_URL_YOU_COPIED
+psql $THE_URI_YOU_COPIED
 insert into pants (created_at) values (now());
 ```
 
-Refresh the PWS-hosted URL in your browser and you should see 'Pants: 1'.
+Refresh the page at the PWS-hosted URI in your browser and you should see 'Pants: 1'.
 
 ## Database migrations
 
