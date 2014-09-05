@@ -12,7 +12,6 @@ There are a few assumptions in this tutorial. It's up to the reader to work arou
 
 - You're starting a new Rails project
 - You want to use a postgres database
-- You want to use a database at all
 
 ## Prerequisites
 
