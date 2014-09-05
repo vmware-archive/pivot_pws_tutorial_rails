@@ -270,19 +270,6 @@ applications:
       - rails-postgres
 ```
 
-## Push warnings: tidying up
-
-Each time you pushed you may have noticed a few ugly WARNINGs. Let's fix these.
-
-### 12 factor
-
-The first is this:
-
-<pre>###### WARNING:
-       Include 'rails_12factor' gem to enable all platform features
-       See https://devcenter.heroku.com/articles/rails-integration-gems for more information.
-</pre>
-
 ## Sponsorship
 
 Any Labs project is eligible for its PWS costs to be covered by a sponsorship during its engagement. Once the project is handed off, the sponsorship will end and the client will be responsible for paying each PWS bill.
