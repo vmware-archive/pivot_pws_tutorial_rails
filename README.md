@@ -34,7 +34,7 @@ Clone this repo. It's really just the result of:
 rails new app_name --database=postgresql --skip-javascript --skip-test-unit
 ```
 
-You could do that instead if you like.
+You could do that instead if you prefer.
 
 ```sh
 git clone https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails
