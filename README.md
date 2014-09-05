@@ -31,6 +31,7 @@ Clone this repo and checkout step1.
 
 ```sh
 git clone git@github.com:pivotal-cf-experimental/pivot_pws_tutorial_rails.git
+cd pivot_pws_tutorial_rails
 git checkout step1
 ```
 
