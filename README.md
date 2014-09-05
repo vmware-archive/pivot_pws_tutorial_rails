@@ -2,7 +2,7 @@
 
 PWS is an installation of [Cloud Foundry][cf] that we host, similar to [Heroku][heroku]. Follow this tutorial if you know your project wants to host on PWS but you're not sure where to start.
 
-## This is internal
+## This guide is for Pivots only
 
 There is another, public-facing *Getting Started with Rails on PWS* guide (not available at time of writing) that details much of the process required to get started with PWS, including command line usage and project setup.
 
