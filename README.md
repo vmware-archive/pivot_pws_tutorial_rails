@@ -51,7 +51,7 @@ bin/rails server
 
 <http://localhost:3000/> will let you know that you need a database. Do as Rails says to get a local one. Refresh the page. You should now see the vanilla Rails "Welcome aboard" message.
 
-[The result of this change is tagged as step2.][step2]
+[The result of this change is in the step2 branch.][step2]
 
 ### If the app doesn't tell you about a missing database locally
 
@@ -296,6 +296,7 @@ To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponso
 [heroku]:https://www.heroku.com/
 [step2]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step1...step2
 [step3]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step2...step3
+[step4]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step3...step4
 [sponsorship]:#sponsorship
 [12factor]:#12-factor
 [12factordotnet-logs]:http://12factor.net/logs
