@@ -158,7 +158,7 @@ bundle
 cf push $YOUR_UNIQUE_APP_NAME
 ```
 
-Tailing the logs and refreshing the browser shows us the full error now, as we saw from the `cf files` invocation.
+Refreshing the browser whilst tailing the logs should now show the PG::ConnectionBad error. No need to dig around with `cf files`.
 
 ## Adding a database
 
