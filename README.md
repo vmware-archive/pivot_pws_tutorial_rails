@@ -302,7 +302,7 @@ One useful resource when you're troubleshooting a failed push is [the official C
 
 ## Further reading
 
-<http://docs.cloudfoundry.org> is essential reading for anyone deploying to Cloud Foundry. Note especially the considerations listed in [App Design for the Cloud][cf-app-design-cloud]
+<http://docs.cloudfoundry.org> is essential reading for anyone deploying to Cloud Foundry. Note especially the considerations listed in [App Design for the Cloud][cf-app-design-cloud].
 
 [pws]:https://run.pivotal.io/
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
