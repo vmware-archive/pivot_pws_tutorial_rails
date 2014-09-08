@@ -282,6 +282,8 @@ applications:
       - rails-postgres
 ```
 
+Also see [the Cloud Foundry docs page on migrations][cf-migrate-db].
+
 ## Sponsorship
 
 Any Labs project is eligible for its PWS costs to be covered by a sponsorship during its engagement. Once the project is handed off, the sponsorship will end and the client will be responsible for paying each PWS bill.
@@ -300,6 +302,7 @@ One useful resource when you're troubleshooting a failed push is [the official C
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
 [configure-service-ruby]:http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html
 [troubleshoot-app-deploy-health]:http://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html
+[cf-migrate-db]:http://docs.cloudfoundry.org/devguide/services/migrate-db.html
 [tools]:https://console.run.pivotal.io/tools
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
