@@ -290,6 +290,8 @@ To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponso
 
 ## Troubleshooting
 
+One useful resource when you're troubleshooting a failed push is [the official Cloud Foundry docs][toubleshoot-app-deploy-health].
+
 ## How to file a support ticket
 
 <http://support.run.pivotal.io/home> is a good place to start for PWS support. However, if you're in the San Francisco office, you might want to pay a visit to the PWS team on the fourth floor.
@@ -297,6 +299,7 @@ To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponso
 [pws]:https://run.pivotal.io/
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
 [configure-service-ruby]:http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html
+[troubleshoot-app-deploy-health]:http://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html
 [tools]:https://console.run.pivotal.io/tools
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
