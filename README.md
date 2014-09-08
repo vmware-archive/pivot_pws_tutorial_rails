@@ -275,7 +275,7 @@ However, since an app of any size will likely have more than one instance, it's 
 applications:
   - name: your-unique-app-name
     memory: 256M
-    instances: 1
+    instances: 2
     path: .
     command: bin/rake cf:on_first_instance db:migrate && bin/rails server -p $PORT
     services:
