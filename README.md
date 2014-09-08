@@ -300,11 +300,16 @@ One useful resource when you're troubleshooting a failed push is [the official C
 
 <http://support.run.pivotal.io/home> is a good place to start for PWS support. However, if you're in the San Francisco office, you might want to pay a visit to the PWS team on the fourth floor.
 
+## Further reading
+
+<http://docs.cloudfoundry.org> is essential reading for anyone deploying to Cloud Foundry. Note especially the considerations listed in [App Design for the Cloud][cf-app-design-cloud]
+
 [pws]:https://run.pivotal.io/
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
 [configure-service-ruby]:http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html
 [troubleshoot-app-deploy-health]:http://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html
 [cf-migrate-db]:http://docs.cloudfoundry.org/devguide/services/migrate-db.html
+[cf-app-design-cloud]:http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html
 [tools]:https://console.run.pivotal.io/tools
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
