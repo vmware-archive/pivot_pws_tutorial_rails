@@ -266,9 +266,9 @@ The Cloud Foundry Ruby buildpack will automatically extract the URI in VCAP_SERV
 
 ## Database migrations
 
-At the time of writing, PWS doesn't support one-off tasks like Heroku's `heroku run`. However, for database migrations a temporary workaround is to run them during the application's startup. This is what is done in the above manifest.yml.
+At the time of writing, PWS doesn't support one-off tasks like Heroku's `heroku run`. For database migrations the temporary workaround is to run them during application startup. This is what is done in the above manifest.yml.
 
-However, since an app of any size will likely have more than one instance, the trick is to only run the migrations on one instance. The public *Getting Started* guide has an example of setting up a rake task called 'cf:on_first_instance'. We can change our manifest to run that task before our migration:
+However, since an app of any size will likely have more than one instance, it's important that those instances don't compete to change the schema simultaneously. The trick is to run the migrations on only one instance. The public *Getting Started* guide has an example of setting up a rake task called 'cf:on_first_instance'. We can change our manifest to run that task before our migration:
 
 ```yaml
 ---
