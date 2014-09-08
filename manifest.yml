@@ -2,9 +2,9 @@
 applications:
   - name: tuts
     memory: 256M
-    instances: 1
+    instances: 2
     path: .
-    command: bin/rake db:migrate && bin/rails server -p $PORT
+    command: bin/rake cf:on_first_instance db:migrate && bin/rails server -p $PORT
     services:
       - rails-postgres
 
