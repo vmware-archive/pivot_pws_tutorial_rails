@@ -290,7 +290,7 @@ To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponso
 
 ## Troubleshooting
 
-One useful resource when you're troubleshooting a failed push is [the official Cloud Foundry docs][toubleshoot-app-deploy-health].
+One useful resource when you're troubleshooting a failed push is [the official Cloud Foundry docs][troubleshoot-app-deploy-health].
 
 ## How to file a support ticket
 
