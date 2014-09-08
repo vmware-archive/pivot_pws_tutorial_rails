@@ -292,7 +292,7 @@ To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponso
 
 ## How to file a support ticket
 
-<http://support.run.pivotal.io/home> is a good place to start for PWS support. However, if you're in the San Francisco office, you might want to pay the PWS team a visit on the fourth floor.
+<http://support.run.pivotal.io/home> is a good place to start for PWS support. However, if you're in the San Francisco office, you might want to pay a visit to the PWS team on the fourth floor.
 
 [pws]:https://run.pivotal.io/
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
