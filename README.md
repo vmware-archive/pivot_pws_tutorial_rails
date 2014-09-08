@@ -223,6 +223,8 @@ cf push
 
 Once the push is complete, visit your .cfapps.io URI and confirm that the same appears there as it did locally. It should say 'Pants: 0'.
 
+[The result of this change is in the step5 branch.][step5]
+
 ## Connecting to the remote database with psql
 
 Let's add a pair of pants to confirm that we're talking to the correct database.
@@ -301,6 +303,7 @@ To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponso
 [step2]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step1...step2
 [step3]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step2...step3
 [step4]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step3...step4
+[step5]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step4...step5
 [sponsorship]:#sponsorship
 [12factor]:#12-factor
 [12factordotnet-logs]:http://12factor.net/logs
