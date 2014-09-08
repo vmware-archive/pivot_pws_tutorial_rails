@@ -282,6 +282,8 @@ applications:
       - rails-postgres
 ```
 
+[The result of this change is in the step6 branch.][step6]
+
 Also see [the Cloud Foundry docs page on migrations][cf-migrate-db].
 
 ## Sponsorship
@@ -310,6 +312,7 @@ One useful resource when you're troubleshooting a failed push is [the official C
 [step3]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step2...step3
 [step4]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step3...step4
 [step5]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step4...step5
+[step6]:https://github.com/pivotal-cf-experimental/pivot_pws_tutorial_rails/compare/step5...step6
 [sponsorship]:#sponsorship
 [12factor]:#12-factor
 [12factordotnet-logs]:http://12factor.net/logs
