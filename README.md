@@ -292,15 +292,13 @@ Any Labs project is eligible for its PWS costs to be covered by a sponsorship du
 
 To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponsorship>. This allows the PWS PM to keep track of internal sponsorships.
 
-## Troubleshooting
-
-One useful resource when you're troubleshooting a failed push is [the official Cloud Foundry docs][troubleshoot-app-deploy-health].
-
 ## How to file a support ticket
 
 <http://support.run.pivotal.io/home> is a good place to start for PWS support. However, if you're in the San Francisco office, you might want to pay a visit to the PWS team on the fourth floor.
 
-## Further reading
+## Troubleshooting and Further Reading
+
+One useful resource when you're troubleshooting a failed push is [the official Cloud Foundry docs section on app deployment health][troubleshoot-app-deploy-health].
 
 <http://docs.cloudfoundry.org> is essential reading for anyone deploying to Cloud Foundry. Note especially the considerations listed in [App Design for the Cloud][cf-app-design-cloud].
 
