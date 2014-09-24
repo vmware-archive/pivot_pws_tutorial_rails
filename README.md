@@ -4,7 +4,7 @@ PWS is an installation of [Cloud Foundry][cf] that we host, similar to [Heroku][
 
 ## This guide is for Pivots only
 
-There is another, public-facing *Getting Started with Rails on PWS* guide (please ask to share the draft Google Doc) that details much of the process required to get started with PWS, including command line usage and project setup.
+There is another, public-facing [Getting Started with Rails on PWS][gsg-ror] guide that details much of the process required to get started with PWS, including command line usage and project setup.
 
 This tutorial, on the other hand, is streamlined for Pivots who are familiar with Rails but who are unfamiliar with [PWS][pws]. It includes extra information such as [how to request sponsorship for your organization][sponsorship].
 
@@ -320,3 +320,4 @@ One useful resource when you're troubleshooting a failed push is [the official C
 [12factor]:#12-factor
 [12factordotnet-logs]:http://12factor.net/logs
 [rails-config-db]:http://guides.rubyonrails.org/configuring.html#configuring-a-database
+[gsg-ror]http://docs.run.pivotal.io/buildpacks/ruby/gsg-ror.html
