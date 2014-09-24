@@ -320,4 +320,4 @@ One useful resource when you're troubleshooting a failed push is [the official C
 [12factor]:#12-factor
 [12factordotnet-logs]:http://12factor.net/logs
 [rails-config-db]:http://guides.rubyonrails.org/configuring.html#configuring-a-database
-[gsg-ror]http://docs.run.pivotal.io/buildpacks/ruby/gsg-ror.html
+[gsg-ror]:http://docs.run.pivotal.io/buildpacks/ruby/gsg-ror.html
