@@ -300,14 +300,14 @@ To start the sponsorship process, fill out the form at <http://bit.ly/pws_sponso
 
 One useful resource when you're troubleshooting a failed push is [the official Cloud Foundry docs section on app deployment health][troubleshoot-app-deploy-health].
 
-<http://docs.cloudfoundry.org> is essential reading for anyone deploying to Cloud Foundry. Note especially the considerations listed in [App Design for the Cloud][cf-app-design-cloud].
+<http://docs.run.pivotal.io> is essential reading for anyone deploying to Cloud Foundry. Note especially the considerations listed in [App Design for the Cloud][cf-app-design-cloud].
 
 [pws]:https://run.pivotal.io/
 [pws-getting-started]:http://docs.run.pivotal.io/starting/
-[configure-service-ruby]:http://docs.cloudfoundry.org/buildpacks/ruby/ruby-service-bindings.html
-[troubleshoot-app-deploy-health]:http://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html
-[cf-migrate-db]:http://docs.cloudfoundry.org/devguide/services/migrate-db.html
-[cf-app-design-cloud]:http://docs.cloudfoundry.org/devguide/deploy-apps/prepare-to-deploy.html
+[configure-service-ruby]:http://docs.run.pivotal.io/buildpacks/ruby/ruby-service-bindings.html
+[troubleshoot-app-deploy-health]:http://docs.run.pivotal.io/devguide/deploy-apps/troubleshoot-app-health.html
+[cf-migrate-db]:http://docs.run.pivotal.io/devguide/services/migrate-db.html
+[cf-app-design-cloud]:http://docs.run.pivotal.io/devguide/deploy-apps/prepare-to-deploy.html
 [tools]:https://console.run.pivotal.io/tools
 [cf]:http://cloudfoundry.org/
 [heroku]:https://www.heroku.com/
